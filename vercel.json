@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/2025-06-03/*",
+      "destination": "/2025-06-03/src/dist/index.html"
+    },
+    {
+      "source": "/",
+      "destination": "https://maditya.sh/talks"
+    }
+  ],
+  "buildCommand": "pnpm run --filter='*' build",
+  "outputDirectory": "dist"
+}
