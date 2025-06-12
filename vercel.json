@@ -1,7 +1,8 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/2025-06-03/*",
+      "source": "/2025-06-03/(.*)",
       "destination": "/2025-06-03/index.html"
     },
     {
