@@ -742,7 +742,7 @@ class: p-1
 ```typescript {all|6-10|11-22|24|all}
 // mcp.ts
 
-import { MCPServer } from '@hono/mcp'
+import { MCPServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import z from "zod";
 
 const mcpServer = new MCPServer({
