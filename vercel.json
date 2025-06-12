@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/2025-06-03/*",
-      "destination": "/2025-06-03/src/dist/index.html"
+      "destination": "/2025-06-03/index.html"
     },
     {
       "source": "/",
