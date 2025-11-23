@@ -1,15 +1,21 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    {
-      "source": "/2025-06-03/(.*)",
-      "destination": "/2025-06-03/index.html"
-    },
-    {
-      "source": "/",
-      "destination": "https://maditya.sh/talks"
-    }
-  ],
-  "buildCommand": "pnpm run --filter='*' build",
-  "outputDirectory": "dist"
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"rewrites": [
+		{
+			"source": "/2025-06-03/(.*)",
+			"destination": "/2025-06-03/index.html"
+		},
+		{
+			"source": "/2025-10-18/(.*)",
+			"destination": "/2025-10-18/index.html"
+		}
+	],
+	"routes": [
+		{
+			"dest": "https://maditya.sh/talks",
+			"src": "/"
+		}
+	],
+	"buildCommand": "pnpm run --filter='*' build",
+	"outputDirectory": "dist"
 }
