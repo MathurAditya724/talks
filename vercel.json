@@ -10,10 +10,11 @@
 			"destination": "/2025-10-18/index.html"
 		}
 	],
-	"routes": [
+	"redirects": [
 		{
-			"dest": "https://maditya.sh/talks",
-			"src": "/"
+			"destination": "https://maditya.sh/talks",
+			"source": "/",
+			"permanent": true
 		}
 	],
 	"buildCommand": "pnpm run --filter='*' build",
