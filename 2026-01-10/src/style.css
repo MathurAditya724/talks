@@ -1,0 +1,172 @@
+/* Sentry-Inspired Slidev Theme */
+/* With animated gradient background and floating icons */
+
+:root {
+  /* Sentry Brand Colors */
+  --sentry-purple-dark: #362D59;
+  --sentry-purple: #6C5FC7;
+  --sentry-purple-light: #8B7FD4;
+  --sentry-pink: #FA4E89;
+  --sentry-blue: #4B3F9E;
+
+  /* Slidev Code Block Styling */
+  --slidev-code-padding: 8px 10px;
+  --slidev-code-background: rgba(10, 10, 20, 0.6) !important;
+}
+
+/* Link Styling */
+.slidev-layout a {
+  border-color: rgba(139, 127, 212, 0.4);
+}
+
+.slidev-layout a:hover {
+  border-color: var(--sentry-pink);
+}
+
+a:has(> code) {
+  text-decoration: none;
+  border: 0px !important;
+}
+
+/* Monaco Editor Styling */
+.monaco-editor {
+  --slidev-code-background: transparent !important;
+  --vscode-editorSuggestWidget-border: rgba(250, 78, 137, 0.2) !important;
+  --vscode-editorHoverWidget-border: rgba(250, 78, 137, 0.2) !important;
+}
+
+.slidev-monaco-container-inner {
+  border: 1px solid rgba(139, 127, 212, 0.2);
+  border-radius: 8px;
+}
+
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-details {
+  background: rgba(54, 45, 89, 0.9) !important;
+  backdrop-filter: blur(12px);
+}
+
+.monaco-editor .monaco-hover {
+  background: rgba(54, 45, 89, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Typography */
+h6 {
+  text-transform: initial !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Slide Content - transparent to show gradient */
+.dark #slide-content {
+  background-color: transparent !important;
+}
+
+#slide-content {
+  background-color: transparent !important;
+}
+
+/* V-Click Transitions */
+.slidev-vclick-target {
+  transition:
+    opacity 500ms ease,
+    filter 200ms ease,
+    color 300ms ease,
+    transform 400ms ease;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(3px);
+}
+
+/* Fade-Out Transitions */
+.fade-out-leave-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.6) ease-out,
+    filter 200ms ease;
+}
+
+.fade-out-enter-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.8) ease-in,
+    filter 200ms ease;
+  transition-delay: calc(var(--slidev-transition-duration) * 0.6);
+}
+
+.fade-out-enter-from,
+.fade-out-leave-to {
+  opacity: 0;
+  filter: blur(5px);
+}
+
+/* Code Block Line Transitions */
+.slidev-code .line {
+  transition: opacity 200ms ease;
+}
+
+/* Magic Links Styling */
+.markdown-magic-link {
+  display: inline-flex;
+  align-items: center;
+  transform: translateY(5px);
+  line-height: 100%;
+  color: #000b;
+  --uno: gap-1 transition rounded px1 py1 mx--0.5 important-border-0 font-condensed;
+}
+
+.dark .markdown-magic-link {
+  color: #fffc;
+}
+
+.markdown-magic-link:hover {
+  background: rgba(250, 78, 137, 0.15);
+}
+
+.markdown-magic-link-image {
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2px;
+}
+
+.markdown-magic-link.markdown-magic-link-github-at {
+  transform: translateY(6px);
+  --uno: pl-0 py-0 pr2 uppercase text-sm gap-1.2 rounded-full;
+}
+
+.markdown-magic-link.markdown-magic-link-github-at .markdown-magic-link-image {
+  height: 1.6em;
+  width: 1.6em;
+  border-radius: 50%;
+}
+
+/* Code Blocks with Glassmorphism */
+.slidev-code {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 127, 212, 0.2);
+  background: rgba(54, 45, 89, 0.4) !important;
+}
+
+/* Rough Annotations Scaling */
+.rough-annotation > path[stroke-width='2'] {
+  stroke-width: calc(2px * var(--slidev-slide-scale));
+}
+
+/* Inline Code Styling */
+.slidev-layout :not(pre) > code {
+  color: var(--sentry-pink);
+  background: rgba(54, 45, 89, 0.8);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* View Transitions */
+::view-transition-group(*) {
+  animation-duration: 0.6s;
+}
