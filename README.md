@@ -8,3 +8,4 @@ Slides &amp; code for my talks, using [Slidev](https://sli.dev).
 
 - [Hono x MCP x Workers](./2025-06-03) - Workers Tech Talk
 - [MCP Auth with Hono](./2025-10-18/) - Hono Conf 2025
+- [Building MCPs](./2026-01-10/) - Cloudflare BLR Meetup
