@@ -8,6 +8,10 @@
 		{
 			"source": "/2025-10-18/(.*)",
 			"destination": "/2025-10-18/index.html"
+		},
+		{
+			"source": "/2026-01-10/(.*)",
+			"destination": "/2026-01-10/index.html"
 		}
 	],
 	"redirects": [
