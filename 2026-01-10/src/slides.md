@@ -263,7 +263,6 @@ layout: two-cols
 </style>
 
 <div class="slide-title">Defining the MCP Server</div>
-<span class="file-badge">mcp.js</span>
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -315,7 +314,6 @@ export default server;
 </style>
 
 <div class="slide-title">Exposing via Hono</div>
-<span class="file-badge">index.js</span>
 
 ```typescript {all}
 import { Hono } from "hono";
@@ -464,7 +462,6 @@ export default app;
 </style>
 
 <div class="slide-title">OAuth with MCP Spec</div>
-<div class="subtitle">3rd Party Provider Authentication</div>
 
 ```typescript {all}
 import { simpleMcpAuthRouter } from '@hono/mcp'
@@ -579,17 +576,22 @@ app.route(
   margin-top: auto;
 }
 
-.logo-placeholder {
-  width: 80px;
-  height: 80px;
-  background: rgba(54, 45, 89, 0.6);
-  border: 2px dashed rgba(139, 127, 212, 0.4);
-  border-radius: 1rem;
+.logo-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.4);
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.logo-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 </style>
@@ -622,9 +624,18 @@ app.route(
   </div>
   
   <div class="logos-row">
-    <div class="logo-placeholder">MCP<br/>Inspector</div>
-    <div class="logo-placeholder">Claude<br/>Desktop</div>
-    <div class="logo-placeholder">Cursor</div>
+    <div class="logo-item">
+      <img src="/mcp.png" alt="MCP Inspector" class="logo-img" />
+      <span class="logo-label">MCP Inspector</span>
+    </div>
+    <div class="logo-item">
+      <img src="/muppet.png" alt="Muppet" class="logo-img" />
+      <span class="logo-label">Muppet</span>
+    </div>
+    <div class="logo-item">
+      <img src="/mcpjam.webp" alt="MCP Jam" class="logo-img" />
+      <span class="logo-label">MCP Jam</span>
+    </div>
   </div>
 </div>
 
@@ -957,34 +968,147 @@ app.route(
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 2rem;
+  gap: 2.5rem;
+  padding: 2rem 3rem;
 }
 
 .sentry-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   color: #ffffff;
   filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.6));
 }
 
-.sentry-image-placeholder {
-  width: 500px;
-  height: 300px;
-  background: rgba(54, 45, 89, 0.4);
-  backdrop-filter: blur(12px);
-  border: 2px dashed rgba(139, 127, 212, 0.4);
-  border-radius: 1rem;
+.stats-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+  align-items: start;
+}
+
+.highlight-stats {
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.big-stat {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 4px solid #FF6B9D;
+  padding: 1.25rem 1.5rem;
+}
+
+.big-stat-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FF6B9D;
+  line-height: 1;
+}
+
+.big-stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+.big-stat-sublabel {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Fira Code', monospace;
+  margin-top: 0.25rem;
+}
+
+.tools-section {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.25rem;
+}
+
+.tools-header {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(139, 127, 212, 0.2);
+}
+
+.tool-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(139, 127, 212, 0.1);
+}
+
+.tool-row:last-child {
+  border-bottom: none;
+}
+
+.tool-rank {
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.4);
-  font-size: 1.2rem;
+  width: 1.5rem;
+}
+
+.tool-name {
+  flex: 1;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #FF6B9D;
+}
+
+.tool-calls {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.metrics-footnote {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
 }
 </style>
 
 <div class="sentry-container">
   <div class="sentry-title">Sentry MCP</div>
-  <div class="sentry-image-placeholder">Image coming soon</div>
+  
+  <div class="stats-layout">
+    <div class="highlight-stats">
+      <div class="big-stat">
+        <div class="big-stat-value">3M+</div>
+        <div class="big-stat-label">Total Requests</div>
+      </div>
+      <div class="big-stat">
+        <div class="big-stat-value">439K</div>
+        <div class="big-stat-label">Top Client</div>
+        <div class="big-stat-sublabel">claude-code</div>
+      </div>
+    </div>
+    <div class="tools-section">
+      <div class="tools-header">Top Tools</div>
+      <div class="tool-row">
+        <span class="tool-rank">1</span>
+        <span class="tool-name">get_issue_details</span>
+        <span class="tool-calls">66K</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-rank">2</span>
+        <span class="tool-name">search_issues</span>
+        <span class="tool-calls">55K</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-rank">3</span>
+        <span class="tool-name">search_events</span>
+        <span class="tool-calls">38K</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="metrics-footnote">Based on metrics from the last 30 days</div>
 </div>
 
 ---
@@ -1010,14 +1134,11 @@ app.route(
 }
 
 .slides-link {
-  font-size: 1.5rem;
-  color: var(--sentry-pink);
-  font-weight: 600;
+  font-size: 1.2rem;
+  color: #FF6B9D;
+  font-weight: 500;
   margin-bottom: 2rem;
-  padding: 0.75rem 2rem;
-  background: rgba(250, 78, 137, 0.1);
-  border: 2px solid var(--sentry-pink);
-  border-radius: 2rem;
+  font-family: 'Fira Code', monospace;
 }
 
 .social-links-final {
